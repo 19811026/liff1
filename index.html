@@ -6,14 +6,10 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     async function main() {
-      await liff.init({ liffId: "2007714863-vabn3PGk" });
-      liff.openWindow({ url: "http://3.mfmb.jp/90333214/", external: true });
-      setTimeout(() => liff.closeWindow(), 1000);
-    }
-    main();
-  </script>
-</head>
-<body>
-  <p>外部ブラウザで開いています...</p>
-</body>
-</html>
+      try {
+        console.log("LIFF初期化開始");
+        await liff.init({ liffId: "2007714863-vabn3PGk" });
+        console.log("LIFF初期化成功");
+
+        liff.openWindow({
+          url: "http://3.mfmb.jp/90333214/",
