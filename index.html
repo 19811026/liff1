@@ -13,3 +13,22 @@
 
         liff.openWindow({
           url: "http://3.mfmb.jp/90333214/",
+          external: true
+        });
+
+        setTimeout(() => {
+          console.log("LIFFウィンドウを閉じます");
+          liff.closeWindow();
+        }, 1000);
+      } catch (e) {
+        console.error("LIFFエラー:", e);
+        document.body.innerHTML += `<p style="color:red;">LIFFエラー：${e.message}</p>`;
+      }
+    }
+    main();
+  </script>
+</head>
+<body>
+  <p>外部ブラウザで開いています...</p>
+</body>
+</html>
